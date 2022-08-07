@@ -26,7 +26,6 @@ public:
   void createSeed();
   void printGrid();
   bool solveGrid();
-  string getGrid();
   void countSoln(int &number);
   void genPuzzle();
   bool verifyGridStatus();
@@ -34,23 +33,6 @@ public:
   void calculateDifficulty();
   int  branchDifficultyScore();
 };
-
-// START: Get grid as string in row major order
-string Sudoku::getGrid()
-{
-  string s = "";
-  for(int row_num=0; row_num<9; ++row_num)
-  {
-    for(int col_num=0; col_num<9; ++col_num)
-    {
-      s = s + to_string(grid[row_num][col_num]);
-    }
-  }
-
-  return s;
-}
-// END: Get grid as string in row major order
-
 
 // START: Generate random number
 int genRandNum(int maxLimit)
